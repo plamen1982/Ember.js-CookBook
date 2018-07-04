@@ -4,7 +4,7 @@
 4.Access QUnit interface and open all tests in localhost
 5.Set up a pod structure
 6.Set up the location where all pods live.
-7.Create pods with the resource command for posts
+7.Create pods for post feature
 8.Add assets to a project
 9.Build project in production enviroment
 10.Disable the fingerprinting

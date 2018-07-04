@@ -10,7 +10,7 @@ ember destroy/(d) <generator-name> - This uninstall the generator that was creat
 ember test/(t) - This runs tests using Testem
 ember install <addon-name> - This install add-ons like ember-bootstrap. More adds-on http://www.emberobserver.com , http://www.emberaddons.com
 ember version/(v)
-ember g resource posts - This will generate a new post model, route, and template and it will update the router
+ember g resource posts --pod - This will generate a new post model, route, and template and it will update the router
 ember build --enviroment=production - Build the application in the production mode, with the argument --enviroment=production
 ember build -prod - This command also build your project for production
 ember build -prod -o<directory> - In you need you can designate the default output folder
@@ -56,7 +56,10 @@ Press d to do a diff of the files and review the changes made. Create a backup o
 
 {
 	"usePods": true
-} - Edit .ember-cli file in the root of your project directory
+} - Edit .ember-cli file in the root of your project directory, 
+if set usePods to true, it will be the default - no need -p, or --p for creating a pods
+
+config/environment.js
 
 var ENV = {
 	modulePrefix: 'pod-example',
