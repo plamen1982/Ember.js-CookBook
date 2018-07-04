@@ -1,1 +1,18 @@
 1.Creating your first project - create, then serve the project
+2.Start the server on port 1234
+3.Start the server to accept the Ajax request with proxy http://127.0.0.1:8080
+4.Access QUnit interface and open all tests in localhost
+5.Set up a pod structure
+6.Set up the location where all pods live.
+7.Create pods with the resource command for posts
+8.Add assets to a project
+9.Build project in production enviroment
+10.Disable the fingerprinting
+11.Include to all assets www.example.com domain
+12.Exclude file from a fingerprinting
+13.Practice, ignore, extension, replaceExtensions for the fingerprinting 
+14.Install with bower moment.js, and then imported as Non AMD asset
+15.Install with bower ic-axaj an AMD asset and import it in your project
+16.Upgrate your Ember-CLI
+17.Update your existing project
+18.Deploy your application to Firebase

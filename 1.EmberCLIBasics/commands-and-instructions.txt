@@ -1,0 +1,155 @@
+ember - print a list of available commands
+ember new <name-of-app> - Creates directory called <name-of-app> and creates the application structure
+ember init/(i) - This creates an app in the current directory
+ember build/(b) - This creates the application in the dist folder
+ember serve/(s) - This starts a web server
+ember serve --port 1234 - This will start the server on port 1234
+ember serve --proxy http://127.0.0.1:8080 - For every Ajax request, Ember now will send these request to the localhost at port 8080
+ember generate/(g) <generator-name> - This runs a generator that builds scaffolding for the project
+ember destroy/(d) <generator-name> - This uninstall the generator that was created by the generator
+ember test/(t) - This runs tests using Testem
+ember install <addon-name> - This install add-ons like ember-bootstrap. More adds-on http://www.emberobserver.com , http://www.emberaddons.com
+ember version/(v)
+ember g resource posts - This will generate a new post model, route, and template and it will update the router
+ember build --enviroment=production - Build the application in the production mode, with the argument --enviroment=production
+ember build -prod - This command also build your project for production
+ember build -prod -o<directory> - In you need you can designate the default output folder
+Building your application for production will automatically minify your files as well as fingerprint them. This does not occur when your env is set up to development,
+which is set by default. The /dist folder has everything that yur web server needs. 
+
+Ember CLI Deploy add-on is a great way to deploy your Ember application
+
+Deploying to Firebase
+
+1. npm install -g firebase-tools - Install the firebase tools
+2. firebase init - After you have a project created and you're ready to deploy, run the firebase init command in the root of the folder. 
+Then follow the instructions 1. Credentials 2. Name of the app 3. name of your public directory. In most cases, should be /dist
+3.Edit the firebase.json file and some rewrite rules:
+{
+	"firebase": "my-new-app",
+	"public": "dist",
+	"rewrites": [{
+		"source": "**",
+		"destination": "/index.html"
+	}]
+}
+4. firebase deploy - Last step to deploy to FIrebase
+
+Upgrade your Ember CLI version:
+
+1. npm uninstall -g ember-cli
+2. npm cache clean
+3. bower cache clean
+4. npm install -g ember-cli
+or
+5. npm install -g ember-cli@X.X.X
+
+Updating an existing project:
+
+In some cases you might want to take an existing project and update it to the latest version of Ember CLI.
+1. rm -rf node_modules bower_components dist tmp - Delete these development directories
+2. npm install ember-cli@X.X.X --save-dev - update package.json file with the version of Ember-CLI that we-re upgrading to
+3. npm install 
+4. bower install - 3&4 install all the npm and bower packages again
+5. ember init - the init command will add the default project blueprint to your directory. You may be asked to replace existing files.
+Press d to do a diff of the files and review the changes made. Create a backup of your project before you begin the upgrade process.
+
+{
+	"usePods": true
+} - Edit .ember-cli file in the root of your project directory
+
+var ENV = {
+	modulePrefix: 'pod-example',
+	..	podModulePrefix: 'pod-example/pods'
+}  - podModulePrefix property sets the POD path with the following format, {appname}/{poddir}. 
+If location is not set all new modules will be created in the app/ folder
+
+in ember-cli-build.js file to turn on or off build process
+module.exports = function(defaults) {
+var app = new EmberApp(defaults, {
+		minifyCss: {
+			enabled: false
+		},
+		minifyJS: {
+			enabled: false
+		}
+	})
+
+All files will be fingerprinted during the production build process. This will include js, css, png, jpg and gif assets. 
+During this process, all these files will have an md5 checksum appended at the end of their filenames.
+If you want to disable the fingerprinting in ember-cli-build.js file
+
+fingerprint: {
+	enabled: false
+}
+
+Another useful option is to prepend a domain to all static files in ember-cli-build.js file
+
+fingerprint: {
+	prepend: 'https://www.example.com'
+}
+	
+Another useful option is to exclude filename of fingerprinting, accepts array of strings with the filenames
+
+fingerprint: {
+	exclude: ['fonts/1234']
+}
+
+Another useful option is to ignore filename of fingerprinting, accepts array of strings with the filenames
+
+fingerprint: {
+	ignore: ['fonts/1234']
+}
+
+The extension option defaults to 'js', 'css', 'png', 'jpg', 'gif' and 'map'. This option can be used to add other files to get fingerprinted:
+
+fingerprint: {
+	extension: ['r3', 'html']
+} 
+
+The replaceExtensions option defaults to 'html', 'css' and 'js'. If needed, new file types can be added to replace source code with new checksum file names:
+
+fingerprint: {
+	replaceExtensions: ['html', 'htm']
+} 
+
+Ember CLI allows you to load Asynchronous Module Definition (AMD) and non-AMD assets. It's a way of defining code modules and their dependencies.
+1.To load a non-AMD asset, you'll need to import it using the ember-cli-build.js file:
+
+app.import('bower_components/moment/moment.js')	
+
+When using non-AMD assets, you may get errors with JSHint if you have global variables. To fix this, add /* global MY_GLOBAL */ at the top
+of your module page. In the moment example, it would look li /* global moment */
+
+AMD assets are imported in similar way. You add the path in the first argument and a list of exports and modules in the second:
+
+app.import('bower_components/ic-axaj/dist/named-amd/main.js', {
+	exports: {
+		'ic-axaj': [
+		'default',
+		'defineFixture',
+		'lookupFixture',
+		'raw',
+		'request'
+		]
+	}
+})
+
+To use this asset in your application you can import it as follows:
+import {raw as icAjaxRaw } from 'ic-axaj';
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+})

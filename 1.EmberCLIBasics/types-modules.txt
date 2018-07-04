@@ -1,0 +1,17 @@
+Directory/What it does
+
+app/adapters - Adapters help extend logic to communicate with a backend data store
+app/components - Components are used to help reuse code and must have a dash i their name
+app/helpers - Helpers are used for HTML reuse
+app/initializers - Initializers are run first and help set up your application
+app/mixins - This is special type of Ember.Object used with multiple inheritance
+app/routes - Routes help move through different application states
+app/serializers - This serializes your data model
+app/transform - Transform is used to deserialize and serialize model attributes
+app/utils - Utils are small utility class
+app/model - Models hold the data store
+app/templates - Templates use HTML Bars to display HTML to the user
+app/templates/components - These are the templates used in your components
+public/assets - all the assets should be placed here.
+app/styles - CSS files should be placed here
+assets/images/{image file} - Images can be referred here
