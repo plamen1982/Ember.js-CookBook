@@ -1,0 +1,8 @@
+*Working with classes and instances
+*Working with computed properties
+*Working with Ember observers in Ember.js
+*Working with bindings 
+*Working with mixins
+*Using enumerables with arrays
+
+Test code in https://ember-twiddle.com/

@@ -1,0 +1,7 @@
+<div>Hi my first name is {{firstName}} my second name is {{secondName}} and my last name is {{lastName}}</div>
+<div>Enter your name if you want</div>
+{{input value=firstName placeholder="first name"}}
+{{input value=secondName placeholder="second name"}}
+{{input value=lastName placeholder="last name"}}
+<button {{action "wholeName" firstName secondName lastName }}>Whole name</button>
+{{yield}}
