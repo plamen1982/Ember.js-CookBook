@@ -1,0 +1,8 @@
+{{#each arrayOfFruits as |fruit|}}
+<ul>
+    <li>{{fruit}}</li>
+</ul>
+{{/each}}
+{{input value=fruit}}
+<button {{action 'addFruit' fruit}}>Add fruit</button>
+{{yield}}
