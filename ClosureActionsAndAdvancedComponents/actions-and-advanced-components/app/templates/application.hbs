@@ -1,0 +1,25 @@
+{{#office-stapler action="enter" as |props|}}
+    <h1>Try to enter the component</h1>
+    <h2>This is {{props.name}} stapler</h2>
+    <h3>The color is {{props.color}}</h3>
+    <h4>Number of clips: {{props.mynumber}}</h4>
+{{/office-stapler}}
+{{#office-stapler pressedAgain=(action "pressedAgain") as |props|}}
+    <h1>Double click the component</h1>
+    <h2>This is {{props.name}} stapler</h2>
+    <h3>The color is {{props.color}}</h3>
+    <h4>Number of clips: {{props.mynumber}}</h4>
+{{/office-stapler}}
+
+{{#office-supplies as |office|}}
+    {{#office.stapler mouseOuter=(action "mouseIsOut") as |props|}}
+        <h3>Stapler type: {{props.name}}</h3>
+        <h3>Color: {{props.color}}</h3>
+    {{/office.stapler}}
+    {{#office.chair as |props|}}
+    <h2>The chair is type: {{props.type}}</h2>
+    <p>The color of the chair is: {{props.colorChair}} inside the application template</p>
+    {{/office.chair}}
+    
+{{/office-supplies}}
+{{outlet}}
