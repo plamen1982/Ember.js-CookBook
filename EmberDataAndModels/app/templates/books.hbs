@@ -1,0 +1,12 @@
+<ul>    
+    {{#each book as |book|}}
+        {{#list-books book = book as |author|}}
+            <span>Other name:</span>{{author.name}}
+        {{/list-books}}
+    {{/each}}
+</ul>
+<ul>
+    {{#each email as |email|}}
+        <span>Email: </span><li>{{email.email}}</li>
+    {{/each}}
+</ul>
