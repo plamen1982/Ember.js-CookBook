@@ -1,0 +1,9 @@
+{{outlet}}
+{{#each model as |instructor|}}
+{{log model}}
+    <div> Name of instructor: <b>{{instructor.name}}</b></div>
+        <div>Teaches Classes:</div>
+        {{!-- {{#each instructor.classes as |class index|}}
+            
+        {{/each}} --}}
+{{/each}}
