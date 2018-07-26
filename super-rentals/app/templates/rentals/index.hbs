@@ -1,0 +1,8 @@
+{{#list-filter
+    filter=(action 'filterByCity')
+    as |filteredResult|}}
+  {{#each filteredResult as |rentalUnit|}}
+    {{rental-listing rental=rentalUnit}}
+  {{/each}}
+{{/list-filter}}
+{{outlet}}

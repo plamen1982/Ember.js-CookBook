@@ -35,17 +35,21 @@ let rentals = [{
           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg'
         }
       }];
-
       this.get('/rentals', function(db, request) {
         if(request.queryParams.city != undefined) {
           let filteredRentals  = rentals.filter(function(rental) {
             return rental.attributes.city.toLowerCase().indexOf(request.queryParams.city.toLowerCase()) != -1
           })
-          console.log(filteredRentals)
           return { data: filteredRentals }
         } else {
           return { data: rentals }
         }
       });
+      this.get('/rentals/:id', function(db, request) {
+        return { data: rentals.find((rental)=> {
+          return request.params.id === rental.id
+          })
+       }
+    })
 }
 

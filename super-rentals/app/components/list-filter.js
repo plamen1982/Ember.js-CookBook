@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-    className: ['list-filter'],
+    classNames: ['list-filter'],
     value: '',
     init() {
         this._super(...arguments);
@@ -10,7 +10,7 @@ export default Component.extend({
 
     actions: {
         handleFilterEntry() {
-            let filterEntry = this.get('value');
+            let filterEntry = this.get('valueEntry');
             this.get('filter')(filterEntry).then(filterResult => this.set('results', filterResult));
         }
     }
