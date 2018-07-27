@@ -14,7 +14,7 @@ test('it renders correctly for Standalone value', function(assert) {
   assert.equal(this.$().text().trim(), 'Standalone');
 });
 
-test('it render correctly for Community value', function() {
+test('it render correctly for Community value', function(assert) {
   this.set('inputValue', 'Apartment');
 
   this.render(hbs`{{rental-property-type inputValue}}`);

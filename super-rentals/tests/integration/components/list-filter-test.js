@@ -10,8 +10,8 @@ moduleForComponent('list-filter', 'Integration | Component | list filter', {
   integration: true
 });
 
-test('should initialy load all listings', function(assert){
-  this.on('filterByCity', (val)=> {
+test('should initially load all listings', function(assert){
+  this.on('filterByCity', (val) => {
     if(val === '') {
       return RSVP.resolve({
         query: val,
@@ -20,7 +20,7 @@ test('should initialy load all listings', function(assert){
       return RSVP.resolve({
         query: val,
         results: FILTERED_ITEMS });
-    }
+      }
   });
   
   this.render(hbs`
@@ -32,13 +32,12 @@ test('should initialy load all listings', function(assert){
           </li>
         {{/each}}
       </ul>
-    {{/list-filter}}
-  `);
+    {{/list-filter}}`);
 
-  this.$('.list-fiter input').val('San').keyup();
+  this.$('.list-fiter .light').val('San').keyup();
 
   return wait().then(()=> {
-    assert.equal(this.$('.city').length, 3);
+    assert.equal(this.$('.city').length, 1);
     assert.equal(this.$('.city').first().text().trim(), 'San Franciso');
   });
 });
