@@ -34,7 +34,7 @@ test('should initially load all listings', function(assert){
       </ul>
     {{/list-filter}}`);
 
-  this.$('.list-fiter .light').val('San').keyup();
+  this.$('.list-fiter input').val('San').keydown();
 
   return wait().then(()=> {
     assert.equal(this.$('.city').length, 1);
