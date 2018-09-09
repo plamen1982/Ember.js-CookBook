@@ -34,10 +34,10 @@ test('should initially load all listings', (assert) => {
         {{/each}}
       </ul>
     {{/list-filter}}`);
-    
-  this.$('.list-fiter input').val('San').keyup();
-  
-  return wait().then(() => { 
+
+  this.$('.list-fiter input').val('San').keydown();
+
+  return wait().then(()=> {
     assert.equal(this.$('.city').length, 1);
     assert.equal(this.$('.city').first().text().trim(), 'San Franciso');
   });
