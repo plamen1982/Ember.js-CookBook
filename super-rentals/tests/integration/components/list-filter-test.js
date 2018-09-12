@@ -1,6 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import wait from 'ember-test-helpers/wait';
+import run from 'ember-runloop';
 import RSVP from 'rsvp';
 
 const ITEMS = [{city: 'San Franciso'}, {city: 'Portland'}, {city: 'Seattle'}];
@@ -10,7 +11,7 @@ moduleForComponent('list-filter', 'Integration | Component | list filter', {
   integration: true
 });
 
-test('should initially load all listings', async function(assert){
+test('should initially load all listings', (assert) => {
   this.on('filterByCity', (val) => {
     if(val === '') {
       return RSVP.resolve({
