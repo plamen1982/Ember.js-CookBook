@@ -1,6 +1,6 @@
 <h2>All posts</h2>
-{{#each model as |post index|}}
-    <h3>{{#link-to 'posts.post' post}} Title: {{post.title}}{{/link-to}}</h3>
+{{#each model as |post|}}
+    <h3>{{#link-to 'posts.post' post.id}} Title: {{post.title}}{{/link-to}}</h3>
     <h5>Content:</h5>
     <p>{{post.body}}</p>
     <h4>Name: {{post.user.name}}</h4>

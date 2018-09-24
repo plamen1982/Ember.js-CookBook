@@ -8,4 +8,5 @@ export default DS.Model.extend({
     title: attr('string'),
     body: attr('string'),
     
+    
 });

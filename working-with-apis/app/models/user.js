@@ -3,7 +3,7 @@ import DS from 'ember-data';
 const { attr, hasMany } = DS;
 
 export default DS.Model.extend({
-    post: hasMany('user'),
+    post: hasMany('user', { inverse: 'user' }),
 
     name: attr('string'),
     email: attr('string'),

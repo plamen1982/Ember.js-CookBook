@@ -24,7 +24,7 @@ test('should initially load all listings', (assert) => {
       }
   });
   
-  await this.render(hbs`
+this.render(hbs`
     {{#list-filter filter=(action 'filterByCity') as |results|}}
       <ul>
         {{#each results as |item|}}
@@ -35,7 +35,7 @@ test('should initially load all listings', (assert) => {
       </ul>
     {{/list-filter}}`);
 
- await this.$('.list-fiter input').val('San').keydown();
+this.$('.list-fiter input').val('San').keydown();
 
   return wait().then(()=> {
     assert.equal(this.$('.city').length, 1);
